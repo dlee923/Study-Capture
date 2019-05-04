@@ -58,8 +58,19 @@ class ReviewViewController: UIViewController {
         userLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
-    private func burnUserID() {
+    private func burnUserID(views: [UIView]) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(UIScreen.main.bounds.size, false, UIScreen.main.scale)
+        let context = UIGraphicsGetCurrentContext()
+        context?.interpolationQuality = CGInterpolationQuality.high
         
+        for eachView in views {
+            eachView.drawHierarchy(in: eachView.frame, afterScreenUpdates: false)
+        }
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
     }
 
     /*
