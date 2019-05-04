@@ -22,7 +22,7 @@ class ReviewViewController: UIViewController {
     
     private func setup() {
         print(self.view.frame)
-        self.view.backgroundColor = UIColor.blue
+        self.view.backgroundColor = UIColor.white
         self.addImageView()
         self.addUserTag()
     }
@@ -44,16 +44,15 @@ class ReviewViewController: UIViewController {
         userLabel.translatesAutoresizingMaskIntoConstraints = false
         userLabel.backgroundColor = .black
         userLabel.textColor = .white
-        userLabel.layer.cornerRadius = 10
         userLabel.clipsToBounds = true
         
         if let userLabelText = self.userLabelText {
-            userLabel.text = " \(userLabelText)"
+            userLabel.text = "  \(userLabelText)"
         }
         
         self.imageView.addSubview(userLabel)
         
-        userLabel.bottomAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: (self.imageView.frame.width - self.imageView.frame.height)/2).isActive = true
+        userLabel.bottomAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: -self.imageView.frame.width/2 + 20).isActive = true
         userLabel.trailingAnchor.constraint(equalTo: self.imageView.trailingAnchor, constant: -10).isActive = true
         userLabel.widthAnchor.constraint(equalTo: self.imageView.widthAnchor, multiplier: 0.35).isActive = true
         userLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
