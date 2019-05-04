@@ -19,8 +19,11 @@ class SelfieViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     let userFieldTitle = UILabel()
     let userField = UITextField()
+    var userText: String?
     let submitBtn = UIButton()
     let container = UIView()
+    
+    var activityIndicator: UIActivityIndicatorView?
     
     // Use this if using UIImagePickerControllerDelegate
     private func setup() {
@@ -28,6 +31,7 @@ class SelfieViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.createContainerView()
         self.createUserField()
         self.createSubmitBtn()
+        self.addActivitySpinner()
     }
     
     private func createContainerView() {
@@ -75,11 +79,30 @@ class SelfieViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.submitBtn.topAnchor.constraint(equalTo: self.userField.bottomAnchor, constant: 5).isActive = true
         
         self.submitBtn.backgroundColor = .purple
-        self.submitBtn.addTarget(self, action: #selector(self.presentCamera), for: .touchUpInside)
+        self.submitBtn.addTarget(self, action: #selector(self.captureUserText), for: .touchUpInside)
         self.submitBtn.setTitle("Proceed to Step 2", for: .normal)
     }
     
-    @objc private func presentCamera() {
+    @objc private func captureUserText() {
+        self.userText = self.userField.text
+        if userTextIsValid() {
+            self.presentCamera()
+        }
+    }
+    
+    private func userTextIsValid() -> Bool {
+        if self.userField.hasText {
+            return true
+        } else {
+            let invalidAlert = UIAlertController(title: "Error", message: "User ID field is blank", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            invalidAlert.addAction(okay)
+            self.present(invalidAlert, animated: true, completion: nil)
+            return false
+        }
+    }
+    
+    private func presentCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let camera = UIImagePickerController()
             camera.delegate = self
@@ -125,19 +148,48 @@ class SelfieViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.dismiss(animated: true, completion: nil)
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             guard let adjustedImage = self.adjustPhotoOrientation(image: selectedImage) else { return }
+            
+            self.startSpinner()
+            
             DispatchQueue.global().async {
                 guard let filteredImg = self.applyFilter(image: adjustedImage) else { return }
+                // artificial lag for filtering image
+                sleep(2)
                 
                 DispatchQueue.main.async {
+                    self.stopSpinner()
                     let image = UIImage(ciImage: filteredImg)
                     let reviewViewController = ReviewViewController()
                     reviewViewController.imageView.image = image
+                    reviewViewController.userLabelText = self.userText
                     self.navigationController?.pushViewController(reviewViewController, animated: true)
                 }
             }
-//            print("saving")
-//            UIImageWriteToSavedPhotosAlbum(selectedImage, nil, nil, nil)
         }
+    }
+    
+    func addActivitySpinner() {
+        self.activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        self.activityIndicator?.backgroundColor = UIColor.black
+        self.activityIndicator?.color = UIColor.orange
+        guard let activityIndicator = self.activityIndicator else { return }
+        self.activityIndicator?.hidesWhenStopped = true
+        
+        self.view.addSubview(activityIndicator)
+        self.activityIndicator?.translatesAutoresizingMaskIntoConstraints = false
+        self.activityIndicator?.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.activityIndicator?.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        self.activityIndicator?.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        self.activityIndicator?.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    func startSpinner() {
+        self.activityIndicator?.isHidden = false
+        self.activityIndicator?.startAnimating()
+    }
+    
+    func stopSpinner() {
+        self.activityIndicator?.stopAnimating()
     }
 }
 
