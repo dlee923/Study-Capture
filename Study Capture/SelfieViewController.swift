@@ -90,10 +90,55 @@ class SelfieViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+    // CIUnsharpMask with an input radius of 11 and an input intensity of 0.5
+    func applyFilter(image: UIImage) -> CIImage? {
+        let coreImg = CIImage(image: image)
+        let filter = CIFilter(name: "CIUnsharpMask")
+        // set image for filtering
+        filter?.setValue(coreImg, forKey: kCIInputImageKey)
+        // set filter options
+        filter?.setValue(11, forKey: kCIInputRadiusKey)
+        filter?.setValue(0.5, forKey: kCIInputIntensityKey)
+        return filter?.outputImage
     }
-
+    
+    func adjustPhotoOrientation(image: UIImage) -> UIImage? {
+        var transform = CGAffineTransform.identity
+        if image.imageOrientation == UIImage.Orientation.up || image.imageOrientation == UIImage.Orientation.upMirrored {
+        } else if image.imageOrientation == UIImage.Orientation.down || image.imageOrientation == UIImage.Orientation.downMirrored {
+        } else if image.imageOrientation == UIImage.Orientation.right || image.imageOrientation == UIImage.Orientation.rightMirrored {
+            transform = transform.translatedBy(x: 0, y: image.size.height)
+            transform = transform.rotated(by: -CGFloat.pi/2)
+        } else if image.imageOrientation == UIImage.Orientation.left || image.imageOrientation == UIImage.Orientation.leftMirrored {
+        }
+        
+        let newCGContext = CGContext(data: nil, width: Int(image.size.width), height: Int(image.size.height), bitsPerComponent: (image.cgImage?.bitsPerComponent)!, bytesPerRow: 0, space: (image.cgImage?.colorSpace)!, bitmapInfo: (image.cgImage?.bitmapInfo.rawValue)!)
+    
+        newCGContext?.concatenate(transform)
+        
+        newCGContext?.draw(image.cgImage!, in: CGRect(x: 0,y: 0,width: image.size.height, height: image.size.width))
+        guard let newCGImage = newCGContext?.makeImage() else { return nil }
+        return UIImage(cgImage: newCGImage)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            guard let adjustedImage = self.adjustPhotoOrientation(image: selectedImage) else { return }
+            DispatchQueue.global().async {
+                guard let filteredImg = self.applyFilter(image: adjustedImage) else { return }
+                
+                DispatchQueue.main.async {
+                    let image = UIImage(ciImage: filteredImg)
+                    let reviewViewController = ReviewViewController()
+                    reviewViewController.imageView.image = image
+                    self.navigationController?.pushViewController(reviewViewController, animated: true)
+                }
+            }
+//            print("saving")
+//            UIImageWriteToSavedPhotosAlbum(selectedImage, nil, nil, nil)
+        }
+    }
 }
 
 

@@ -39,5 +39,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>We&apos;ll need your photo!</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Let us save this to your photo album!</string>
 </dict>
 </plist>

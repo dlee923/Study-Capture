@@ -17,6 +17,7 @@
 		7043ED61227D15CA005ABC20 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7043ED60227D15CA005ABC20 /* SelfieViewController.swift */; };
 		7043ED62227D15CA005ABC20 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7043ED60227D15CA005ABC20 /* SelfieViewController.swift */; };
 		7043ED63227D15CA005ABC20 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7043ED60227D15CA005ABC20 /* SelfieViewController.swift */; };
+		70653B88227DC91D00AD3D63 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B87227DC91D00AD3D63 /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7043ED52227D1293005ABC20 /* Study_CaptureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Study_CaptureUITests.swift; sourceTree = "<group>"; };
 		7043ED54227D1293005ABC20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7043ED60227D15CA005ABC20 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
+		70653B87227DC91D00AD3D63 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				7043ED32227D1291005ABC20 /* AppDelegate.swift */,
 				7043ED34227D1291005ABC20 /* MainViewController.swift */,
 				7043ED60227D15CA005ABC20 /* SelfieViewController.swift */,
+				70653B87227DC91D00AD3D63 /* ReviewViewController.swift */,
 				7043ED36227D1291005ABC20 /* Main.storyboard */,
 				7043ED39227D1293005ABC20 /* Assets.xcassets */,
 				7043ED3B227D1293005ABC20 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			files = (
 				7043ED61227D15CA005ABC20 /* SelfieViewController.swift in Sources */,
 				7043ED35227D1291005ABC20 /* MainViewController.swift in Sources */,
+				70653B88227DC91D00AD3D63 /* ReviewViewController.swift in Sources */,
 				7043ED33227D1291005ABC20 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
