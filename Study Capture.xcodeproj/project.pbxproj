@@ -18,6 +18,10 @@
 		7043ED62227D15CA005ABC20 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7043ED60227D15CA005ABC20 /* SelfieViewController.swift */; };
 		7043ED63227D15CA005ABC20 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7043ED60227D15CA005ABC20 /* SelfieViewController.swift */; };
 		70653B88227DC91D00AD3D63 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B87227DC91D00AD3D63 /* ReviewViewController.swift */; };
+		70653B8A227E40FB00AD3D63 /* SelfieViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B89227E40FB00AD3D63 /* SelfieViews.swift */; };
+		70653B8C227E414D00AD3D63 /* SelfieUserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8B227E414D00AD3D63 /* SelfieUserID.swift */; };
+		70653B8E227E41F100AD3D63 /* SelfiePhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8D227E41F100AD3D63 /* SelfiePhotoHandler.swift */; };
+		70653B90227E425C00AD3D63 /* SelfieSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8F227E425C00AD3D63 /* SelfieSpinner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		7043ED54227D1293005ABC20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7043ED60227D15CA005ABC20 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
 		70653B87227DC91D00AD3D63 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		70653B89227E40FB00AD3D63 /* SelfieViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViews.swift; sourceTree = "<group>"; };
+		70653B8B227E414D00AD3D63 /* SelfieUserID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieUserID.swift; sourceTree = "<group>"; };
+		70653B8D227E41F100AD3D63 /* SelfiePhotoHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfiePhotoHandler.swift; sourceTree = "<group>"; };
+		70653B8F227E425C00AD3D63 /* SelfieSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieSpinner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 				7043ED32227D1291005ABC20 /* AppDelegate.swift */,
 				7043ED34227D1291005ABC20 /* MainViewController.swift */,
 				7043ED60227D15CA005ABC20 /* SelfieViewController.swift */,
+				70653B91227E429200AD3D63 /* SelfieVC */,
 				70653B87227DC91D00AD3D63 /* ReviewViewController.swift */,
 				7043ED36227D1291005ABC20 /* Main.storyboard */,
 				7043ED39227D1293005ABC20 /* Assets.xcassets */,
@@ -131,6 +140,17 @@
 				7043ED54227D1293005ABC20 /* Info.plist */,
 			);
 			path = "Study CaptureUITests";
+			sourceTree = "<group>";
+		};
+		70653B91227E429200AD3D63 /* SelfieVC */ = {
+			isa = PBXGroup;
+			children = (
+				70653B89227E40FB00AD3D63 /* SelfieViews.swift */,
+				70653B8B227E414D00AD3D63 /* SelfieUserID.swift */,
+				70653B8D227E41F100AD3D63 /* SelfiePhotoHandler.swift */,
+				70653B8F227E425C00AD3D63 /* SelfieSpinner.swift */,
+			);
+			path = SelfieVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70653B8A227E40FB00AD3D63 /* SelfieViews.swift in Sources */,
+				70653B8E227E41F100AD3D63 /* SelfiePhotoHandler.swift in Sources */,
+				70653B8C227E414D00AD3D63 /* SelfieUserID.swift in Sources */,
 				7043ED61227D15CA005ABC20 /* SelfieViewController.swift in Sources */,
 				7043ED35227D1291005ABC20 /* MainViewController.swift in Sources */,
+				70653B90227E425C00AD3D63 /* SelfieSpinner.swift in Sources */,
 				70653B88227DC91D00AD3D63 /* ReviewViewController.swift in Sources */,
 				7043ED33227D1291005ABC20 /* AppDelegate.swift in Sources */,
 			);

@@ -58,6 +58,9 @@ class ReviewViewController: UIViewController {
         userLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
+    private func burnUserID() {
+        
+    }
 
     /*
     // MARK: - Navigation
