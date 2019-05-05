@@ -36,12 +36,17 @@ class ReviewViewController: UIViewController {
     @objc private func savePhoto() {
         guard let view = self.view else { return }
         guard let imageToSave = self.burnUserID(views: [view]) else { return }
-        UIImageWriteToSavedPhotosAlbum(imageToSave, self, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
         self.savePhotoConfirmation()
     }
     
-    @objc private func savePhotoConfirmation() {
-        self.dismiss(animated: true, completion: nil)
+    private func savePhotoConfirmation() {
+        let confirmationAlert = UIAlertController(title: "Success", message: "Photo has been saved to your camera roll.", preferredStyle: .alert)
+        let okay = UIAlertAction(title: "Okay", style: .default) { (complete) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        confirmationAlert.addAction(okay)
+        self.present(confirmationAlert, animated: true, completion: nil)
     }
     
     private func addImageView() {
@@ -88,15 +93,5 @@ class ReviewViewController: UIViewController {
         
         return image
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
