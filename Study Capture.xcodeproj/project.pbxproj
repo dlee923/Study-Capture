@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7043ED33227D1291005ABC20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7043ED32227D1291005ABC20 /* AppDelegate.swift */; };
-		7043ED35227D1291005ABC20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7043ED34227D1291005ABC20 /* MainViewController.swift */; };
 		7043ED38227D1291005ABC20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7043ED36227D1291005ABC20 /* Main.storyboard */; };
 		7043ED3A227D1293005ABC20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7043ED39227D1293005ABC20 /* Assets.xcassets */; };
 		7043ED3D227D1293005ABC20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7043ED3B227D1293005ABC20 /* LaunchScreen.storyboard */; };
@@ -23,6 +22,8 @@
 		70653B8E227E41F100AD3D63 /* SelfiePhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8D227E41F100AD3D63 /* SelfiePhotoHandler.swift */; };
 		70653B90227E425C00AD3D63 /* SelfieSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8F227E425C00AD3D63 /* SelfieSpinner.swift */; };
 		70653B93227E482C00AD3D63 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B92227E482C00AD3D63 /* Colors.swift */; };
+		70653B95227E9B2200AD3D63 /* ReviewViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B94227E9B2200AD3D63 /* ReviewViews.swift */; };
+		70653B97227E9B8E00AD3D63 /* ReviewSaveHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B96227E9B8E00AD3D63 /* ReviewSaveHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 /* Begin PBXFileReference section */
 		7043ED2F227D1291005ABC20 /* Study Capture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Study Capture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7043ED32227D1291005ABC20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7043ED34227D1291005ABC20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7043ED37227D1291005ABC20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7043ED39227D1293005ABC20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7043ED3C227D1293005ABC20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		70653B8D227E41F100AD3D63 /* SelfiePhotoHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfiePhotoHandler.swift; sourceTree = "<group>"; };
 		70653B8F227E425C00AD3D63 /* SelfieSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieSpinner.swift; sourceTree = "<group>"; };
 		70653B92227E482C00AD3D63 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		70653B94227E9B2200AD3D63 /* ReviewViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViews.swift; sourceTree = "<group>"; };
+		70653B96227E9B8E00AD3D63 /* ReviewSaveHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSaveHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +117,10 @@
 			children = (
 				7043ED32227D1291005ABC20 /* AppDelegate.swift */,
 				70653B92227E482C00AD3D63 /* Colors.swift */,
-				7043ED34227D1291005ABC20 /* MainViewController.swift */,
 				7043ED60227D15CA005ABC20 /* SelfieViewController.swift */,
 				70653B91227E429200AD3D63 /* SelfieVC */,
 				70653B87227DC91D00AD3D63 /* ReviewViewController.swift */,
+				70653B98227E9BBA00AD3D63 /* ReviewVC */,
 				7043ED36227D1291005ABC20 /* Main.storyboard */,
 				7043ED39227D1293005ABC20 /* Assets.xcassets */,
 				7043ED3B227D1293005ABC20 /* LaunchScreen.storyboard */,
@@ -154,6 +156,15 @@
 				70653B8F227E425C00AD3D63 /* SelfieSpinner.swift */,
 			);
 			path = SelfieVC;
+			sourceTree = "<group>";
+		};
+		70653B98227E9BBA00AD3D63 /* ReviewVC */ = {
+			isa = PBXGroup;
+			children = (
+				70653B96227E9B8E00AD3D63 /* ReviewSaveHandler.swift */,
+				70653B94227E9B2200AD3D63 /* ReviewViews.swift */,
+			);
+			path = ReviewVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,10 +300,11 @@
 			files = (
 				70653B8A227E40FB00AD3D63 /* SelfieViews.swift in Sources */,
 				70653B93227E482C00AD3D63 /* Colors.swift in Sources */,
+				70653B95227E9B2200AD3D63 /* ReviewViews.swift in Sources */,
+				70653B97227E9B8E00AD3D63 /* ReviewSaveHandler.swift in Sources */,
 				70653B8E227E41F100AD3D63 /* SelfiePhotoHandler.swift in Sources */,
 				70653B8C227E414D00AD3D63 /* SelfieUserID.swift in Sources */,
 				7043ED61227D15CA005ABC20 /* SelfieViewController.swift in Sources */,
-				7043ED35227D1291005ABC20 /* MainViewController.swift in Sources */,
 				70653B90227E425C00AD3D63 /* SelfieSpinner.swift in Sources */,
 				70653B88227DC91D00AD3D63 /* ReviewViewController.swift in Sources */,
 				7043ED33227D1291005ABC20 /* AppDelegate.swift in Sources */,

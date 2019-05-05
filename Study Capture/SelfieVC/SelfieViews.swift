@@ -54,6 +54,7 @@ extension SelfieViewController {
         self.userField.layer.borderColor = UIColor.black.cgColor
         self.userField.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         self.userField.layer.borderWidth = 1
+        self.userField.clearButtonMode = .always
     }
     
     internal func createSubmitBtn() {
@@ -65,9 +66,9 @@ extension SelfieViewController {
         self.submitBtn.topAnchor.constraint(equalTo: self.userField.bottomAnchor, constant: 10).isActive = true
         
         self.submitBtn.backgroundColor = UIColor.canfieldColor
-        self.submitBtn.layer.cornerRadius = 15
+        self.submitBtn.layer.cornerRadius = 14
         self.submitBtn.addTarget(self, action: #selector(self.captureUserText), for: .touchUpInside)
-        self.submitBtn.setTitle("Proceed to Step 2", for: .normal)
+        self.submitBtn.setTitle("Submit", for: .normal)
     }
     
 }

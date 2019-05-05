@@ -70,6 +70,7 @@ extension SelfieViewController {
                     let reviewViewController = ReviewViewController()
                     reviewViewController.imageView.image = image
                     reviewViewController.userLabelText = self.userText
+                    reviewViewController.selfieDelegate = self
                     self.navigationController?.pushViewController(reviewViewController, animated: true)
                 }
             }

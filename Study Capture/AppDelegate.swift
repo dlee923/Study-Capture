@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let mainViewController = MainViewController()
-        let navController = UINavigationController(rootViewController: mainViewController)
+        let selfieViewController = SelfieViewController()
+        let navController = UINavigationController(rootViewController: selfieViewController)
         
         window?.rootViewController = navController
         

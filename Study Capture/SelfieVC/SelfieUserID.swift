@@ -10,10 +10,18 @@ import UIKit
 
 extension SelfieViewController {
     
+    private func changeButtonColor() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.submitBtn.backgroundColor = UIColor.submitColor
+        }) { (complete) in
+            self.presentCamera()
+        }
+    }
+    
     @objc internal func captureUserText() {
         self.userText = self.userField.text
         if userTextIsValid() {
-            self.presentCamera()
+            self.changeButtonColor()
         }
     }
     
