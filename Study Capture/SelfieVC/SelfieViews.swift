@@ -39,6 +39,8 @@ extension SelfieViewController {
         self.userFieldTitle.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         self.userFieldTitle.text = " Enter Subject ID:"
+        self.userFieldTitle.layer.cornerRadius = 15
+        self.userFieldTitle.clipsToBounds = true
         self.userFieldTitle.backgroundColor = .white
         
         self.container.addSubview(self.userField)

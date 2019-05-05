@@ -18,13 +18,30 @@ class ReviewViewController: UIViewController {
     }
     
     let imageView = UIImageView()
+    var userLabel = UILabel()
     var userLabelText: String?
     
     private func setup() {
-        print(self.view.frame)
         self.view.backgroundColor = UIColor.white
         self.addImageView()
         self.addUserTag()
+        self.addSaveButton()
+    }
+    
+    private func addSaveButton() {
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.savePhoto))
+        self.navigationItem.rightBarButtonItem = saveButton
+    }
+    
+    @objc private func savePhoto() {
+        guard let view = self.view else { return }
+        guard let imageToSave = self.burnUserID(views: [view]) else { return }
+        UIImageWriteToSavedPhotosAlbum(imageToSave, self, nil, nil)
+        self.savePhotoConfirmation()
+    }
+    
+    @objc private func savePhotoConfirmation() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func addImageView() {
@@ -40,7 +57,6 @@ class ReviewViewController: UIViewController {
     }
     
     private func addUserTag() {
-        let userLabel = UILabel()
         userLabel.translatesAutoresizingMaskIntoConstraints = false
         userLabel.backgroundColor = .black
         userLabel.textColor = .white
