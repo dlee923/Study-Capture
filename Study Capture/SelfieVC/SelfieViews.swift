@@ -36,7 +36,7 @@ extension SelfieViewController {
         self.userFieldTitle.topAnchor.constraint(equalTo: self.container.topAnchor, constant: 0).isActive = true
         self.userFieldTitle.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 0).isActive = true
         self.userFieldTitle.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -0).isActive = true
-        self.userFieldTitle.heightAnchor.constraint(equalToConstant: (self.view.bounds.width * 0.5) / 4).isActive = true
+        self.userFieldTitle.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         self.userFieldTitle.text = " Enter Subject ID:"
         self.userFieldTitle.backgroundColor = .white
@@ -46,11 +46,11 @@ extension SelfieViewController {
         self.userField.topAnchor.constraint(equalTo: self.userFieldTitle.bottomAnchor, constant: 5).isActive = true
         self.userField.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 5).isActive = true
         self.userField.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -5).isActive = true
-        self.userField.heightAnchor.constraint(equalToConstant: (self.view.bounds.width * 0.5) / 4).isActive = true
+        self.userField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         self.userField.placeholder = " A-Z; 0-9 Only"
         self.userField.layer.borderColor = UIColor.black.cgColor
-        self.userField.backgroundColor = .lightGray
+        self.userField.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         self.userField.layer.borderWidth = 1
     }
     
@@ -60,9 +60,9 @@ extension SelfieViewController {
         self.submitBtn.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -5).isActive = true
         self.submitBtn.leadingAnchor.constraint(equalTo: self.container.leadingAnchor, constant: 5).isActive = true
         self.submitBtn.trailingAnchor.constraint(equalTo: self.container.trailingAnchor, constant: -5).isActive = true
-        self.submitBtn.topAnchor.constraint(equalTo: self.userField.bottomAnchor, constant: 5).isActive = true
+        self.submitBtn.topAnchor.constraint(equalTo: self.userField.bottomAnchor, constant: 10).isActive = true
         
-        self.submitBtn.backgroundColor = .blue
+        self.submitBtn.backgroundColor = UIColor.canfieldColor
         self.submitBtn.layer.cornerRadius = 15
         self.submitBtn.addTarget(self, action: #selector(self.captureUserText), for: .touchUpInside)
         self.submitBtn.setTitle("Proceed to Step 2", for: .normal)
