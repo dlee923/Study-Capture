@@ -24,6 +24,8 @@
 		70653B93227E482C00AD3D63 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B92227E482C00AD3D63 /* Colors.swift */; };
 		70653B95227E9B2200AD3D63 /* ReviewViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B94227E9B2200AD3D63 /* ReviewViews.swift */; };
 		70653B97227E9B8E00AD3D63 /* ReviewSaveHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B96227E9B8E00AD3D63 /* ReviewSaveHandler.swift */; };
+		70DFC82C22810F08003DBCBC /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFC82B22810F08003DBCBC /* UserObject.swift */; };
+		70DFC82E2281114B003DBCBC /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFC82D2281114B003DBCBC /* CustomSpinner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		70653B92227E482C00AD3D63 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		70653B94227E9B2200AD3D63 /* ReviewViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViews.swift; sourceTree = "<group>"; };
 		70653B96227E9B8E00AD3D63 /* ReviewSaveHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSaveHandler.swift; sourceTree = "<group>"; };
+		70DFC82B22810F08003DBCBC /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		70DFC82D2281114B003DBCBC /* CustomSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpinner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 			children = (
 				7043ED32227D1291005ABC20 /* AppDelegate.swift */,
 				70653B92227E482C00AD3D63 /* Colors.swift */,
+				70DFC82B22810F08003DBCBC /* UserObject.swift */,
+				70DFC82D2281114B003DBCBC /* CustomSpinner.swift */,
 				7043ED60227D15CA005ABC20 /* SelfieViewController.swift */,
 				70653B91227E429200AD3D63 /* SelfieVC */,
 				70653B87227DC91D00AD3D63 /* ReviewViewController.swift */,
@@ -299,8 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				70653B8A227E40FB00AD3D63 /* SelfieViews.swift in Sources */,
+				70DFC82C22810F08003DBCBC /* UserObject.swift in Sources */,
 				70653B93227E482C00AD3D63 /* Colors.swift in Sources */,
 				70653B95227E9B2200AD3D63 /* ReviewViews.swift in Sources */,
+				70DFC82E2281114B003DBCBC /* CustomSpinner.swift in Sources */,
 				70653B97227E9B8E00AD3D63 /* ReviewSaveHandler.swift in Sources */,
 				70653B8E227E41F100AD3D63 /* SelfiePhotoHandler.swift in Sources */,
 				70653B8C227E414D00AD3D63 /* SelfieUserID.swift in Sources */,
@@ -487,6 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7E8B8U32UT;
 				INFOPLIST_FILE = "Study Capture/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7E8B8U32UT;
 				INFOPLIST_FILE = "Study Capture/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

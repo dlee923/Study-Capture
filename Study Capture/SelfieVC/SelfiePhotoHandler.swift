@@ -68,8 +68,10 @@ extension SelfieViewController {
                     self.stopSpinner()
                     let image = UIImage(ciImage: filteredImg)
                     let reviewViewController = ReviewViewController()
-                    reviewViewController.imageView.image = image
-                    reviewViewController.userLabelText = self.userText
+                    if let userText = self.userText {
+                        let userObj = UserObject(image: image, userID: userText)
+                        reviewViewController.userObject = userObj
+                    }
                     reviewViewController.selfieDelegate = self
                     self.navigationController?.pushViewController(reviewViewController, animated: true)
                 }

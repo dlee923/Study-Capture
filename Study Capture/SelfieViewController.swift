@@ -24,6 +24,7 @@ class SelfieViewController: UIViewController, UIImagePickerControllerDelegate, U
     let container = UIView()
     
     var activityIndicator: UIActivityIndicatorView?
+    var customSpinner: CustomSpinner?
     
     // Use this if using UIImagePickerControllerDelegate
     private func setup() {
@@ -33,6 +34,7 @@ class SelfieViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.createUserField()
         self.createSubmitBtn()
         self.addActivitySpinner()
+        self.addCustomSpinner()
     }
     
 }

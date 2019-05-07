@@ -22,8 +22,14 @@ class ReviewViewController: UIViewController {
     
     let imageView = UIImageView()
     var userLabel = UILabel()
-    var userLabelText: String?
     var selfieDelegate: Reset?
+    
+    var userObject: UserObject? {
+        didSet {
+            self.imageView.image = self.userObject?.image
+            self.userLabel.text = self.userObject?.userID
+        }
+    }
     
     private func setup() {
         self.view.backgroundColor = UIColor.white
