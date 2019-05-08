@@ -38,6 +38,14 @@ class Study_CaptureTests: XCTestCase {
         self.selfieViewController?.userField.text = "defaultUser123"
         let valid3 = self.selfieViewController?.userTextIsValid()
         XCTAssert(valid3 == true, "user is not valid")
+        
+        self.selfieViewController?.userField.text = "default User"
+        let valid4 = self.selfieViewController?.userTextIsValid()
+        XCTAssert(valid4 == false, "user is valid")
+        
+        self.selfieViewController?.userField.text = "default'User"
+        let valid5 = self.selfieViewController?.userTextIsValid()
+        XCTAssert(valid5 == false, "user is valid")
     }
 
     func testPerformanceExample() {

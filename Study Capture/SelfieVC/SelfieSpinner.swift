@@ -16,6 +16,8 @@ extension SelfieViewController {
         self.activityIndicator?.color = UIColor.orange
         guard let activityIndicator = self.activityIndicator else { return }
         self.activityIndicator?.hidesWhenStopped = true
+        self.activityIndicator?.layer.cornerRadius = 10
+        self.activityIndicator?.clipsToBounds = true
         
         self.view.addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false

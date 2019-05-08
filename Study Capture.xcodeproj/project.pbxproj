@@ -144,7 +144,6 @@
 				7043ED32227D1291005ABC20 /* AppDelegate.swift */,
 				70653B92227E482C00AD3D63 /* Colors.swift */,
 				70DFC82B22810F08003DBCBC /* UserObject.swift */,
-				70DFC82D2281114B003DBCBC /* CustomSpinner.swift */,
 				7043ED60227D15CA005ABC20 /* SelfieViewController.swift */,
 				70653B91227E429200AD3D63 /* SelfieVC */,
 				70653B87227DC91D00AD3D63 /* ReviewViewController.swift */,
@@ -182,6 +181,7 @@
 				70653B8B227E414D00AD3D63 /* SelfieUserID.swift */,
 				70653B8D227E41F100AD3D63 /* SelfiePhotoHandler.swift */,
 				70653B8F227E425C00AD3D63 /* SelfieSpinner.swift */,
+				70DFC82D2281114B003DBCBC /* CustomSpinner.swift */,
 			);
 			path = SelfieVC;
 			sourceTree = "<group>";

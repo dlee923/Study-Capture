@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomSpinner: UIActivityIndicatorView {
+class CustomSpinner: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +42,7 @@ class CustomSpinner: UIActivityIndicatorView {
             eachImageView.contentMode = .scaleAspectFit
             eachImageView.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(eachImageView)
+            eachImageView.alpha = 0.0
             
             let constraint = eachImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: yAxisConstant)
             constraint.isActive = true
@@ -54,28 +55,27 @@ class CustomSpinner: UIActivityIndicatorView {
         }
     }
     
-    override func startAnimating() {
+    func startAnimating() {
         self.is_animating = true
         var delayIncrement = 0.0
-        for eachImageView in self.letterConstraints {
-            UIView.animate(withDuration: 1.0, delay: delayIncrement, options: .curveLinear, animations: {
-                eachImageView.constant = self.yAxisConstant + 5
-                self.layoutIfNeeded()
-            }) { (_) in
-                
-                delayIncrement += 0.1
+        DispatchQueue.main.async {
+            for eachImageView in self.canfieldImages {
+                UIView.animate(withDuration: 0.1, delay: delayIncrement, options: .curveLinear, animations: {
+                    eachImageView.alpha = 1.0
+                }) { (_) in
+                    delayIncrement += 0.1
+                }
             }
         }
-        
     }
     
-    override func stopAnimating() {
+    func stopAnimating() {
         self.is_animating = false
         self.isHidden = true
     }
     
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
 }

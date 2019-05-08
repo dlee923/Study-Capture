@@ -55,26 +55,30 @@ extension SelfieViewController {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            guard let adjustedImage = self.adjustPhotoOrientation(image: selectedImage) else { return }
+            self.presentReviewController(selectedImage: selectedImage)
+        }
+    }
+    
+    func presentReviewController(selectedImage: UIImage) {
+        guard let adjustedImage = self.adjustPhotoOrientation(image: selectedImage) else { return }
+        
+        self.startSpinner()
+        
+        DispatchQueue.global().async {
+            guard let filteredImg = self.applyFilter(image: adjustedImage) else { return }
+            // artificial lag for filtering image
+            sleep(2)
             
-            self.startSpinner()
-            
-            DispatchQueue.global().async {
-                guard let filteredImg = self.applyFilter(image: adjustedImage) else { return }
-                // artificial lag for filtering image
-                sleep(2)
-                
-                DispatchQueue.main.async {
-                    self.stopSpinner()
-                    let image = UIImage(ciImage: filteredImg)
-                    let reviewViewController = ReviewViewController()
-                    if let userText = self.userText {
-                        let userObj = UserObject(image: image, userID: userText)
-                        reviewViewController.userObject = userObj
-                    }
-                    reviewViewController.selfieDelegate = self
-                    self.navigationController?.pushViewController(reviewViewController, animated: true)
+            DispatchQueue.main.async {
+                self.stopSpinner()
+                let image = UIImage(ciImage: filteredImg)
+                let reviewViewController = ReviewViewController()
+                if let userText = self.userText {
+                    let userObj = UserObject(image: image, userID: userText)
+                    reviewViewController.userObject = userObj
                 }
+                reviewViewController.selfieDelegate = self
+                self.navigationController?.pushViewController(reviewViewController, animated: true)
             }
         }
     }
