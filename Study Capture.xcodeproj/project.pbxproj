@@ -24,6 +24,28 @@
 		70653B93227E482C00AD3D63 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B92227E482C00AD3D63 /* Colors.swift */; };
 		70653B95227E9B2200AD3D63 /* ReviewViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B94227E9B2200AD3D63 /* ReviewViews.swift */; };
 		70653B97227E9B8E00AD3D63 /* ReviewSaveHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B96227E9B8E00AD3D63 /* ReviewSaveHandler.swift */; };
+		70CF6E2722825561002D1513 /* SelfieViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B89227E40FB00AD3D63 /* SelfieViews.swift */; };
+		70CF6E2822825562002D1513 /* SelfieViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B89227E40FB00AD3D63 /* SelfieViews.swift */; };
+		70CF6E2922825566002D1513 /* SelfieUserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8B227E414D00AD3D63 /* SelfieUserID.swift */; };
+		70CF6E2A22825566002D1513 /* SelfieUserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8B227E414D00AD3D63 /* SelfieUserID.swift */; };
+		70CF6E2B2282556A002D1513 /* SelfiePhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8D227E41F100AD3D63 /* SelfiePhotoHandler.swift */; };
+		70CF6E2C2282556A002D1513 /* SelfiePhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8D227E41F100AD3D63 /* SelfiePhotoHandler.swift */; };
+		70CF6E2D2282556D002D1513 /* SelfieSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8F227E425C00AD3D63 /* SelfieSpinner.swift */; };
+		70CF6E2E2282556D002D1513 /* SelfieSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B8F227E425C00AD3D63 /* SelfieSpinner.swift */; };
+		70CF6E2F2282557C002D1513 /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFC82D2281114B003DBCBC /* CustomSpinner.swift */; };
+		70CF6E302282557C002D1513 /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFC82D2281114B003DBCBC /* CustomSpinner.swift */; };
+		70CF6E31228255CC002D1513 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B92227E482C00AD3D63 /* Colors.swift */; };
+		70CF6E32228255CD002D1513 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B92227E482C00AD3D63 /* Colors.swift */; };
+		70CF6E33228255EE002D1513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7043ED32227D1291005ABC20 /* AppDelegate.swift */; };
+		70CF6E34228255EE002D1513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7043ED32227D1291005ABC20 /* AppDelegate.swift */; };
+		70CF6E35228255F5002D1513 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFC82B22810F08003DBCBC /* UserObject.swift */; };
+		70CF6E36228255F6002D1513 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFC82B22810F08003DBCBC /* UserObject.swift */; };
+		70CF6E37228255FE002D1513 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B87227DC91D00AD3D63 /* ReviewViewController.swift */; };
+		70CF6E38228255FF002D1513 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B87227DC91D00AD3D63 /* ReviewViewController.swift */; };
+		70CF6E3922825602002D1513 /* ReviewSaveHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B96227E9B8E00AD3D63 /* ReviewSaveHandler.swift */; };
+		70CF6E3A22825602002D1513 /* ReviewSaveHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B96227E9B8E00AD3D63 /* ReviewSaveHandler.swift */; };
+		70CF6E3B22825605002D1513 /* ReviewViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B94227E9B2200AD3D63 /* ReviewViews.swift */; };
+		70CF6E3C22825606002D1513 /* ReviewViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70653B94227E9B2200AD3D63 /* ReviewViews.swift */; };
 		70DFC82C22810F08003DBCBC /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFC82B22810F08003DBCBC /* UserObject.swift */; };
 		70DFC82E2281114B003DBCBC /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DFC82D2281114B003DBCBC /* CustomSpinner.swift */; };
 /* End PBXBuildFile section */
@@ -324,7 +346,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7043ED62227D15CA005ABC20 /* SelfieViewController.swift in Sources */,
+				70CF6E3922825602002D1513 /* ReviewSaveHandler.swift in Sources */,
+				70CF6E31228255CC002D1513 /* Colors.swift in Sources */,
+				70CF6E3B22825605002D1513 /* ReviewViews.swift in Sources */,
+				70CF6E2B2282556A002D1513 /* SelfiePhotoHandler.swift in Sources */,
+				70CF6E35228255F5002D1513 /* UserObject.swift in Sources */,
+				70CF6E33228255EE002D1513 /* AppDelegate.swift in Sources */,
+				70CF6E2F2282557C002D1513 /* CustomSpinner.swift in Sources */,
+				70CF6E2922825566002D1513 /* SelfieUserID.swift in Sources */,
+				70CF6E37228255FE002D1513 /* ReviewViewController.swift in Sources */,
 				7043ED48227D1293005ABC20 /* Study_CaptureTests.swift in Sources */,
+				70CF6E2722825561002D1513 /* SelfieViews.swift in Sources */,
+				70CF6E2D2282556D002D1513 /* SelfieSpinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +366,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7043ED63227D15CA005ABC20 /* SelfieViewController.swift in Sources */,
+				70CF6E3A22825602002D1513 /* ReviewSaveHandler.swift in Sources */,
+				70CF6E32228255CD002D1513 /* Colors.swift in Sources */,
+				70CF6E3C22825606002D1513 /* ReviewViews.swift in Sources */,
+				70CF6E2C2282556A002D1513 /* SelfiePhotoHandler.swift in Sources */,
+				70CF6E36228255F6002D1513 /* UserObject.swift in Sources */,
+				70CF6E34228255EE002D1513 /* AppDelegate.swift in Sources */,
+				70CF6E302282557C002D1513 /* CustomSpinner.swift in Sources */,
+				70CF6E2A22825566002D1513 /* SelfieUserID.swift in Sources */,
+				70CF6E38228255FF002D1513 /* ReviewViewController.swift in Sources */,
 				7043ED53227D1293005ABC20 /* Study_CaptureUITests.swift in Sources */,
+				70CF6E2822825562002D1513 /* SelfieViews.swift in Sources */,
+				70CF6E2E2282556D002D1513 /* SelfieSpinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

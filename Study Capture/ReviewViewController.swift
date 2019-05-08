@@ -31,7 +31,7 @@ class ReviewViewController: UIViewController {
         }
     }
     
-    private func setup() {
+    internal func setup() {
         self.view.backgroundColor = UIColor.white
         self.addImageView()
         self.addUserTag()

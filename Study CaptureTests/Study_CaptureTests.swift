@@ -27,9 +27,17 @@ class Study_CaptureTests: XCTestCase {
     func testUserInputValidity() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        self.selfieViewController?.userField.text = "defaultUser!@#"
+        let valid1 = self.selfieViewController?.userTextIsValid()
+        XCTAssert(valid1 == false, "user is valid")
+        
         self.selfieViewController?.userField.text = "defaultUser"
-        let valid = self.selfieViewController.userTextIsValid()
-        XCTAssert(valid == true, "user is not valid")
+        let valid2 = self.selfieViewController?.userTextIsValid()
+        XCTAssert(valid2 == true, "user is not valid")
+        
+        self.selfieViewController?.userField.text = "defaultUser123"
+        let valid3 = self.selfieViewController?.userTextIsValid()
+        XCTAssert(valid3 == true, "user is not valid")
     }
 
     func testPerformanceExample() {
