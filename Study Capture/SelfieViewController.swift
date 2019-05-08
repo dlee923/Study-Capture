@@ -27,7 +27,7 @@ class SelfieViewController: UIViewController, UIImagePickerControllerDelegate, U
     var customSpinner: CustomSpinner?
     
     // Use this if using UIImagePickerControllerDelegate
-    private func setup() {
+    internal func setup() {
         self.navigationItem.title = "User Info"
         self.view.backgroundColor = .white
         self.createContainerView()

@@ -25,7 +25,7 @@ extension SelfieViewController {
         }
     }
     
-    private func userTextIsValid() -> Bool {
+    func userTextIsValid() -> Bool {
         if !self.userField.hasText {
             let invalidAlert = UIAlertController(title: "Error", message: "User ID field is blank", preferredStyle: .alert)
             let okay = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
