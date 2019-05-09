@@ -17,6 +17,10 @@ class SelfieViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.setup()
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        self.customSpinner?.startAnimating()
+//    }
+    
     let userFieldTitle = UILabel()
     let userField = UITextField()
     var userText: String?

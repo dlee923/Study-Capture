@@ -62,12 +62,15 @@ extension SelfieViewController {
     func presentReviewController(selectedImage: UIImage) {
         guard let adjustedImage = self.adjustPhotoOrientation(image: selectedImage) else { return }
         
-        self.startSpinner()
+        DispatchQueue.main.async {
+            self.startSpinner()
+        }
         
         DispatchQueue.global().async {
             guard let filteredImg = self.applyFilter(image: adjustedImage) else { return }
             // artificial lag for filtering image
-            sleep(2)
+            
+            sleep(5)
             
             DispatchQueue.main.async {
                 self.stopSpinner()

@@ -28,15 +28,14 @@ extension SelfieViewController {
     }
     
     internal func startSpinner() {
-        self.activityIndicator?.isHidden = false
-        self.activityIndicator?.startAnimating()
-//        self.customSpinner?.isHidden = false
-//        self.customSpinner?.startAnimating()
+//        self.activityIndicator?.isHidden = false
+//        self.activityIndicator?.startAnimating()
+        self.customSpinner?.startAnimating()
     }
     
     internal func stopSpinner() {
-        self.activityIndicator?.stopAnimating()
-//        self.customSpinner?.stopAnimating()
+//        self.activityIndicator?.stopAnimating()
+        self.customSpinner?.stopAnimating()
     }
     
     func addCustomSpinner() {

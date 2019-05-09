@@ -57,14 +57,26 @@ class CustomSpinner: UIView {
     
     func startAnimating() {
         self.is_animating = true
+        self.isHidden = false
+        self.fadeInFadeOut()
+        Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { _ in self.fadeInFadeOut() }
+        
+    }
+    
+    func fadeInFadeOut() {
         var delayIncrement = 0.0
-        DispatchQueue.main.async {
-            for eachImageView in self.canfieldImages {
+        for eachImageView in self.canfieldImages {
+            UIView.animate(withDuration: 0.1, delay: delayIncrement, options: [.curveLinear], animations: {
+                eachImageView.alpha = 1.0
+                delayIncrement += 0.1
+                
+            }) { (_) in
+                delayIncrement = 1.0
+                
                 UIView.animate(withDuration: 0.1, delay: delayIncrement, options: .curveLinear, animations: {
-                    eachImageView.alpha = 1.0
-                }) { (_) in
+                    eachImageView.alpha = 0.0
                     delayIncrement += 0.1
-                }
+                })
             }
         }
     }
